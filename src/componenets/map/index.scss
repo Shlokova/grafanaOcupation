@@ -79,6 +79,7 @@
       justify-content: center;
       width: 19vw;
       margin-top: 11px;
+      margin-right: 10px;
 
       .regionsListItem {
         box-sizing: border-box;
@@ -87,6 +88,8 @@
         border: none;
         text-decoration: none;
         margin: 5px 0px;
+        max-width: 90%;
+        
         background: #FFFFFF;
         border-radius: 10px;
         font-style: normal;

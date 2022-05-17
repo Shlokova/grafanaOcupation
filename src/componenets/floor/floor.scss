@@ -17,12 +17,45 @@
     cursor: pointer;
     &.active{
        path{
-          stroke: red;
+          stroke: red !important;
         }
     }
+
+
+    &.red{
+      path{
+         fill: rgb(242, 0, 0);
+         stroke: rgb(152, 0, 0);
+       }
+   }
+   &.orange{
+    path{
+       fill: rgb(202, 80, 23);
+       stroke: rgb(152, 41, 0);
+     }
+ }
+ &.yellow{
+  path{
+     fill: rgb(226, 190, 7);
+     stroke: rgb(224, 168, 0);
+   }
+}
+&.lightGreen{
+  path{
+     fill: rgb(169, 220, 0);
+     stroke: rgb(81, 152, 0);
+   }
+}
+&.green{
+  path{
+     fill: rgb(79, 219, 4);
+     stroke: rgb(64, 176, 3);
+   }
+}
+
+
     &:hover {
       .aboutSvg_container {
-
         display: flex;
       }
 

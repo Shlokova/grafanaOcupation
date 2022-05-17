@@ -5,22 +5,22 @@ import SVG from 'react-inlinesvg';
 import {ZoneObject} from '../../types';
 import { TransformComponent } from 'react-zoom-pan-pinch';
 import {useLocation} from "react-router-dom";
-import {findSearch} from "../../utils";
+import {convertingNumberToClass, findSearch} from "../../utils";
 
 type FloorProps = {
-  number: string;
+  workload: {[key:string]:number};
   // regions: Region[];
   // refFloor: RefObject<HTMLDivElement>;
   zones: ZoneObject[];
   floorMap: ZoneObject;
+  size: {width:string, height:string}
 };
-const Floor = ({ number,  floorMap, zones }: FloorProps) => {
+const Floor = ({size, workload,  floorMap, zones }: FloorProps) => {
   const css = {
     background: `url("https://storage.yandexcloud.net/cctv-media/${floorMap.plan}")`,
-    // width: floorMap.width,
-    // height: floorMap.height,
-      width: 2515,
-      height: 3121,
+    width: size.width+ 'px',
+    height: size.height +'px',
+   
   };
 
   const regions = zones.filter(el => el.parent_zone_id === floorMap.id)
@@ -40,7 +40,7 @@ const Floor = ({ number,  floorMap, zones }: FloorProps) => {
         {regions.map((region) => {
           return (
             <div
-              className={'regions ' + (currentRegion === region.name && 'active')}
+              className={'regions ' + (!!workload && convertingNumberToClass(workload[region.name]))+ (currentRegion === region.name && 'active') }
               // width={100}
               id={region.name}
               // height={}
