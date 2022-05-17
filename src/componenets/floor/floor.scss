@@ -11,65 +11,60 @@
   width: 100%;
   height: 100%;
   position: relative;
-  .regions{
+  .regions {
     overflow: visible;
     position: absolute;
     cursor: pointer;
-    &.active{
-       path{
-          stroke: red !important;
-        }
+    &.active {
+      path {
+        stroke: red !important;
+      }
     }
 
-
-    &.red{
-      path{
-         fill: rgb(242, 0, 0);
-         stroke: rgb(152, 0, 0);
-       }
-   }
-   &.orange{
-    path{
-       fill: rgb(202, 80, 23);
-       stroke: rgb(152, 41, 0);
-     }
- }
- &.yellow{
-  path{
-     fill: rgb(226, 190, 7);
-     stroke: rgb(224, 168, 0);
-   }
-}
-&.lightGreen{
-  path{
-     fill: rgb(169, 220, 0);
-     stroke: rgb(81, 152, 0);
-   }
-}
-&.green{
-  path{
-     fill: rgb(79, 219, 4);
-     stroke: rgb(64, 176, 3);
-   }
-}
-
+    &.red {
+      path {
+        fill: rgb(242, 0, 0);
+        stroke: rgb(152, 0, 0);
+      }
+    }
+    &.orange {
+      path {
+        fill: rgb(202, 80, 23);
+        stroke: rgb(152, 41, 0);
+      }
+    }
+    &.yellow {
+      path {
+        fill: rgb(226, 190, 7);
+        stroke: rgb(224, 168, 0);
+      }
+    }
+    &.lightGreen {
+      path {
+        fill: rgb(169, 220, 0);
+        stroke: rgb(81, 152, 0);
+      }
+    }
+    &.green {
+      path {
+        fill: rgb(79, 219, 4);
+        stroke: rgb(64, 176, 3);
+      }
+    }
 
     &:hover {
       .aboutSvg_container {
         display: flex;
       }
-
     }
-    .aboutSvg_container{
-      display:none;
+    .aboutSvg_container {
+      display: none;
       align-items: center;
       justify-content: center;
       width: 300px;
       height: 250px;
       position: absolute;
-      top:0;
-
-
+      top: 0;
 
       .aboutSvg {
         background: #ffffff;
@@ -85,7 +80,7 @@
         font-size: 30px;
         line-height: 47px;
         overflow: visible;
-    }
+      }
     }
   }
 }

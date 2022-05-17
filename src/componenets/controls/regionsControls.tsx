@@ -1,11 +1,11 @@
 import React from 'react';
-import {Link, useLocation} from 'react-router-dom';
-import {ZoneObject} from '../../types';
-import {findSearch} from "../../utils";
+import { Link, useLocation } from 'react-router-dom';
+import { ZoneObject } from '../../types';
+import { findSearch } from '../../utils';
 
 type RegionsControlsProps = {
   floors: ZoneObject[];
-    floorId:number;
+  floorId: number;
   zoomToElement: (
     node: HTMLElement | string,
     customScale: number | undefined,
@@ -14,11 +14,14 @@ type RegionsControlsProps = {
   ) => void;
 };
 
-function RegionsControls({ zoomToElement, floors, floorId }: RegionsControlsProps) {
-
-    const location = useLocation()
-    const {floor, region} = findSearch(location.search)
-    const regions = floors.filter(el => el.parent_zone_id === floorId)
+function RegionsControls({
+  zoomToElement,
+  floors,
+  floorId,
+}: RegionsControlsProps) {
+  const location = useLocation();
+  const { floor, region } = findSearch(location.search);
+  const regions = floors.filter((el) => el.parent_zone_id === floorId);
 
   return (
     <div>
