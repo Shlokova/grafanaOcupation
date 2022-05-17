@@ -1,18 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 .map {
-
   box-sizing: border-box;
   width: 80%;
   height: 100%;
-  //z-index: 0;
   overflow-x: hidden;
   overflow-y: hidden;
   position: absolute;
   display: flex;
   flex-direction: column;
-  //align-items: center;
   font-family: 'Inter';
 
   .mapControls {
@@ -26,30 +23,31 @@
     width: 60px;
     height: 100px;
 
-    .zoomButtonsBox, .resetButtonBox {
+    .zoomButtonsBox,
+    .resetButtonBox {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 0;
       overflow: hidden;
-      background: #FFFFFF;
-      border: 1px solid #8C8C8C;
+      background: #ffffff;
+      border: 1px solid #8c8c8c;
       border-radius: 20px;
       margin-bottom: 7px;
 
-      .buttonsItem:active{
+      .buttonsItem:active {
         font-size: 24px;
       }
     }
-    .zoomButtonsBox{
-      .buttonsItem:first-child{
-        border-bottom: 1px solid  #8C8C8C;
+    .zoomButtonsBox {
+      .buttonsItem:first-child {
+        border-bottom: 1px solid #8c8c8c;
       }
     }
-    }
+  }
 
-  .sideMenu{
+  .sideMenu {
     box-sizing: border-box;
     position: absolute;
     display: flex;
@@ -59,13 +57,13 @@
     right: 0;
     bottom: 0;
     padding: 11px 24px;
-    width:20%;
+    width: 20%;
     height: 100%;
     border-left: 3px solid rgba(140, 140, 140, 0.63);
-    background: #F1F1F1;
+    background: #f1f1f1;
     font-family: 'Inter';
     font-style: normal;
-    .title{
+    .title {
       margin: 11px 0;
       font-weight: 700;
       font-size: 24px;
@@ -89,8 +87,8 @@
         text-decoration: none;
         margin: 5px 0px;
         max-width: 90%;
-        
-        background: #FFFFFF;
+
+        background: #ffffff;
         border-radius: 10px;
         font-style: normal;
         font-weight: 600;
@@ -99,12 +97,12 @@
         text-align: center;
         cursor: pointer;
         color: #000000;
-        border:1px solid  #8C8C8C;
+        border: 1px solid #8c8c8c;
         &:hover {
           background-color: #f5f5f5;
         }
         &.active {
-          border-color: #0374FF;
+          border-color: #0374ff;
         }
       }
     }
@@ -115,26 +113,22 @@
       overflow: hidden;
 
       .buttonsItem {
-        &:first-child{
-          //border-right:none;
+        &:first-child {
           border-bottom-left-radius: 20px;
           border-top-left-radius: 20px;
         }
-        &:last-child{
-          //border-left:none;
+        &:last-child {
           border-bottom-right-radius: 20px;
           border-top-right-radius: 20px;
         }
-        border:1px solid  #8C8C8C;
+        border: 1px solid #8c8c8c;
         &.active {
-          border: 1px solid #0374FF;
+          border: 1px solid #0374ff;
         }
       }
     }
   }
-
-  }
-
+}
 
 .buttonsItem {
   box-sizing: border-box;
@@ -142,7 +136,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border:none;
+  border: none;
   width: 30px;
   height: 30px;
   text-decoration: none;
@@ -152,7 +146,6 @@
   font-size: 22px;
   text-align: center;
   color: #000000;
-  background: #FFFFFF;
+  background: #ffffff;
   cursor: pointer;
 }
-
