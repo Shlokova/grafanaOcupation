@@ -56,13 +56,14 @@
     top: 0;
     right: 0;
     bottom: 0;
-    padding: 11px 24px;
+    padding: 11px 10px;
     width: 20%;
     height: 100%;
     border-left: 3px solid rgba(140, 140, 140, 0.63);
     background: #f1f1f1;
     font-family: 'Inter';
     font-style: normal;
+
     .title {
       margin: 11px 0;
       font-weight: 700;
@@ -114,6 +115,7 @@
 
       .buttonsItem {
         &:first-child {
+          //border-right:none;
           border-bottom-left-radius: 20px;
           border-top-left-radius: 20px;
         }
