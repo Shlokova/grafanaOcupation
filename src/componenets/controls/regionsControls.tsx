@@ -25,7 +25,7 @@ function RegionsControls({
 
   return (
     <div>
-      <h1 className={'title'}>Выбор зоны</h1>
+      <h1 className={'title'}>Место</h1>
       <div className="regionsList">
         {regions.map((el) => {
           return (

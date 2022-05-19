@@ -13,54 +13,45 @@
     overflow: visible;
     position: absolute;
     cursor: pointer;
-    &.active {
-      path {
-        stroke: red !important;
-      }
+    path {
+      stroke: none;
+      fill-opacity: 0.5;
     }
+    // &.active {
+    // }
 
     &.red {
       path {
-        fill: rgb(242, 0, 0);
-        stroke: rgb(152, 0, 0);
+        fill: #eb5757;
       }
     }
     &.orange {
       path {
-        fill: rgb(202, 80, 23);
-        stroke: rgb(152, 41, 0);
+        fill: #ff7010;
       }
     }
     &.yellow {
       path {
-        fill: rgb(226, 190, 7);
-        stroke: rgb(224, 168, 0);
+        fill: #f7b500;
       }
     }
     &.lightGreen {
       path {
-        fill: rgb(169, 220, 0);
-        stroke: rgb(81, 152, 0);
+        fill: #00a911;
       }
     }
     &.green {
       path {
-        fill: rgb(79, 219, 4);
-        stroke: rgb(64, 176, 3);
+        fill: #008d6b;
       }
     }
 
-    &:hover {
-      .aboutSvg_container {
-        display: flex;
-      }
-    }
     .aboutSvg_container {
       display: none;
       align-items: center;
       justify-content: center;
-      width: 300px;
-      height: 250px;
+      // width: 300px;
+      // height: 250px;
       position: absolute;
       top: 0;
 
@@ -78,6 +69,16 @@
         font-size: 30px;
         line-height: 47px;
         overflow: visible;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        /* identical to box height, or 143% */
+
+        /* Black/100 */
+
+        color: #333333;
       }
     }
   }

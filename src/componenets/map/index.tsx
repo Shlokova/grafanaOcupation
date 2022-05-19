@@ -10,6 +10,7 @@ import { useLocation } from 'react-router-dom';
 import { findSearch } from '../../utils';
 import { XMLParser } from 'fast-xml-parser';
 import axios from 'axios';
+import { AboutRegion } from 'componenets/controls/AboutRegion';
 
 type CampusMapProps = {
   floors: ZoneObject[];
@@ -26,8 +27,8 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
     .sort((a, b) => {
       return parseInt(a.description) - parseInt(b.description);
     });
-  const { floor } = findSearch(location.search);
-
+  const { floor, region } = findSearch(location.search);
+  const regionObject = floors.find((el: ZoneObject) => el.name === region);
   const options = {
     ignoreAttributes: false,
   };
@@ -75,7 +76,7 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
               height,
             }}
           >
-            <div className={'map'}>
+            <div className={'floor'}>
               <Floor
                 workload={workload}
                 size={size}
@@ -98,6 +99,7 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
                 floors={floors}
                 floorId={dataFloors[+floor - 1].id}
               />
+              <AboutRegion region={regionObject} workload={workload[region]} />
             </div>
           </div>
         </React.Fragment>

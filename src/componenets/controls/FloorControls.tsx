@@ -14,7 +14,7 @@ const FloorControls = ({ floors }: FloorControlsPropsI) => {
   const floor = search.floor;
   return (
     <>
-      <h1 className={'title'}>Выбор этажа</h1>
+      <h1 className={'title'}>Этаж</h1>
       <div className="floorButtonsBox">
         {floorsNumber.map((val) => (
           <Link

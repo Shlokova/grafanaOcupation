@@ -22,18 +22,19 @@ type MapControlProps = {
     animationName?: string
   ) => void;
 };
+
 function MapControl({ zoomIn, zoomOut, resetTransform }: MapControlProps) {
   const location = useLocation();
   const { floor } = findSearch(location.search);
 
   return (
-    <div>
+    <>
       <div className="zoomButtonsBox">
         <button onClick={() => zoomIn(0.2, 10)} className={'buttonsItem '}>
-          +
+          <div className="btnIconPlus" />
         </button>
         <button onClick={() => zoomOut(0.2, 10)} className="buttonsItem">
-          -
+          <div className="btnIconMinus" />
         </button>
       </div>
       <div className="resetButtonBox">
@@ -42,10 +43,10 @@ function MapControl({ zoomIn, zoomOut, resetTransform }: MapControlProps) {
           className={'buttonsItem '}
           onClick={() => resetTransform(0)}
         >
-          0
+          <div className="btnIconReset" />
         </Link>
       </div>
-    </div>
+    </>
   );
 }
 

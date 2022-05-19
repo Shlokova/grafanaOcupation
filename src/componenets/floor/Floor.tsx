@@ -1,7 +1,6 @@
 import React from 'react';
 import './floor.scss';
 import SVG from 'react-inlinesvg';
-
 import { ZoneObject } from '../../types';
 import { TransformComponent } from 'react-zoom-pan-pinch';
 import { useLocation } from 'react-router-dom';

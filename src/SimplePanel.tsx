@@ -5,7 +5,6 @@ import './App.css';
 import Map from './componenets/map';
 import { HashRouter as Router } from 'react-router-dom';
 import { parseZonesData, parseZonesRelativeWorkload } from 'utils';
-// import {useTheme} from "@grafana/ui";
 
 interface Props extends PanelProps<SimpleOptions> {}
 

@@ -47,9 +47,25 @@ export const parseZonesRelativeWorkload = (data: PanelData) => {
 };
 
 export const convertingNumberToClass = (num: number) => {
-  if (num > 0.6) return ' red ';
-  if (num > 0.4) return ' orange ';
-  if (num > 0.2) return ' yellow ';
-  if (num > 0.1) return ' lightGreen ';
+  if (num > 0.8) return ' red ';
+  if (num > 0.6) return ' orange ';
+  if (num > 0.4) return ' yellow ';
+  if (num > 0.2) return ' lightGreen ';
   return ' green ';
+};
+
+export const convertingNumberToColor = (num: number) => {
+  if (num > 0.8) return '#eb5757';
+  if (num > 0.6) return '#ff7010';
+  if (num > 0.4) return '#f7b500';
+  if (num > 0.2) return '#00a911';
+  return '#008d6b';
+};
+
+export const convertingNumberToDescription = (num: number) => {
+  if (num > 0.8) return 'Максимальная загруженность';
+  if (num > 0.6) return 'Высокая загруженность';
+  if (num > 0.4) return 'Средняя загруженность';
+  if (num > 0.2) return 'Низкая загруженность';
+  return 'Минимальная загруженность';
 };
