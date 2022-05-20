@@ -106,7 +106,7 @@
       padding: 0px;
       gap: 12px;
       width: 240px;
-      height: 300px;
+      max-height: 300px;
       overflow-y: auto;
       &::-webkit-scrollbar {
         width: 4px;

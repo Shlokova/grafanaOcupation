@@ -5,9 +5,16 @@ import { findSearch } from '../../utils';
 
 type FloorControlsPropsI = {
   floors: ZoneObject[];
+  resetTransform: (
+    x?: number,
+    y?: number,
+    scale?: number,
+    animationTime?: number,
+    animationName?: string
+  ) => void;
 };
 
-const FloorControls = ({ floors }: FloorControlsPropsI) => {
+const FloorControls = ({ floors, resetTransform }: FloorControlsPropsI) => {
   const floorsNumber = floors.map((el) => parseInt(el.description));
   const location = useLocation();
   const search = findSearch(location.search);
@@ -18,11 +25,12 @@ const FloorControls = ({ floors }: FloorControlsPropsI) => {
       <div className="floorButtonsBox">
         {floorsNumber.map((val) => (
           <Link
+            onClick={() => resetTransform(0)}
             to={`?floor=${val}`}
             key={val}
             className={'buttonsItem ' + (+floor === val ? 'active' : '')}
           >
-            <div> {val}</div>
+            <div>{val}</div>
           </Link>
         ))}
       </div>

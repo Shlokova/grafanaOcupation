@@ -93,7 +93,10 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
               />
             </div>
             <div className={'sideMenu'}>
-              <FloorControls floors={dataFloors} />
+              <FloorControls
+                floors={dataFloors}
+                resetTransform={resetTransform}
+              />
               <RegionsControls
                 zoomToElement={zoomToElement}
                 floors={floors}

@@ -1,7 +1,3 @@
-import { RefObject } from 'react';
-
-// type SeriesSize = 'sm' | 'md' | 'lg';
-
 export interface SimpleOptions {
   time: number;
 }
