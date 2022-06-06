@@ -15,9 +15,6 @@ type MapControlProps = {
     animationName?: string
   ) => void;
   resetTransform: (
-    x?: number,
-    y?: number,
-    scale?: number,
     animationTime?: number,
     animationName?: string
   ) => void;

@@ -33,7 +33,7 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
     ignoreAttributes: false,
   };
 
-  const [size, setSize] = useState({ width: '', height: '3000' });
+  const [size, setSize] = useState({ width: '', height: '3200' });
 
   useEffect(() => {
     const parser = new XMLParser(options);
@@ -54,7 +54,7 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
 
   return (
     <TransformWrapper
-      initialScale={height / +size.height}
+      initialScale={height / (+size.height + 200)}
       minScale={0.1}
       maxScale={1.8}
       centerOnInit={true}
