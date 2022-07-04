@@ -82,6 +82,7 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
                 size={size}
                 floorMap={dataFloors[+floor - 1]}
                 zones={floors}
+                zoomToElement={zoomToElement}
               />
             </div>
 
