@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ZoneObject } from '../../types';
-import { findSearch } from '../../utils';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { ZoneObject } from "../../types";
+import { findSearch } from "../../utils";
 
 type RegionsControlsProps = {
   floors: ZoneObject[];
@@ -25,17 +25,17 @@ function RegionsControls({
 
   return (
     <div>
-      <h1 className={'title'}>Место</h1>
+      <h1 className={"title"}>Место</h1>
       <div className="regionsList">
         {regions.map((el) => {
           return (
             <Link
-              key={el.name}
-              to={`/?floor=${floor}&region=${el.name}`}
-              className={'regionsListItem ' + (region === el.name && 'active')}
-              onClick={(e) => zoomToElement(el.name, undefined, 0, 'linear')}
+              key={el.trassir_name}
+              to={`/?floor=${floor}&region=${el.trassir_name}`}
+              className={"regionsListItem " + (region === el.trassir_name && "active")}
+              onClick={(e) => zoomToElement(el.trassir_name, undefined, 0, "linear")}
             >
-              {el.description}
+              {el.humanreadable_name}
             </Link>
           );
         })}

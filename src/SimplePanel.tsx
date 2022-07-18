@@ -1,10 +1,10 @@
-import React from 'react';
-import { PanelProps } from '@grafana/data';
-import { SimpleOptions } from 'types';
-import './App.css';
-import Map from './componenets/map';
-import { HashRouter as Router } from 'react-router-dom';
-import { parseZonesData, parseZonesRelativeWorkload } from 'utils';
+import React from "react";
+import { PanelProps } from "@grafana/data";
+import { SimpleOptions } from "types";
+import "./App.css";
+import Map from "./componenets/map";
+import { HashRouter as Router } from "react-router-dom";
+import { parseZonesData, parseZonesRelativeWorkload } from "utils";
 
 interface Props extends PanelProps<SimpleOptions> {}
 

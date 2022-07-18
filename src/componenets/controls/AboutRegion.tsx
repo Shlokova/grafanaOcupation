@@ -1,7 +1,7 @@
-import { Progress } from 'antd';
-import React from 'react';
-import { ZoneObject } from 'types';
-import { convertingNumberToColor, convertingNumberToDescription } from 'utils';
+import { Progress } from "antd";
+import React from "react";
+import { ZoneObject } from "types";
+import { convertingNumberToColor, convertingNumberToDescription } from "utils";
 
 type AboutRegionProps = {
   region: ZoneObject | undefined;
@@ -9,10 +9,10 @@ type AboutRegionProps = {
 };
 
 export const AboutRegion = ({ region, workload }: AboutRegionProps) => {
-  if (region)
+  if (region) {
     return (
       <div className="regionWorkloadContainer">
-        <div className="title">{region.description}</div>
+        <div className="title">{region.humanreadable_name}</div>
         <Progress
           className="workloadBar"
           percent={workload * 100}
@@ -25,5 +25,6 @@ export const AboutRegion = ({ region, workload }: AboutRegionProps) => {
         </div>
       </div>
     );
+  }
   return <div></div>;
 };

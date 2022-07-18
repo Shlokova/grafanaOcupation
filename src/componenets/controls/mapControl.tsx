@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { findSearch } from '../../utils';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { findSearch } from "../../utils";
 // import { FloorType } from '../../types';
 
 type MapControlProps = {
@@ -14,10 +14,7 @@ type MapControlProps = {
     animationTime?: number,
     animationName?: string
   ) => void;
-  resetTransform: (
-    animationTime?: number,
-    animationName?: string
-  ) => void;
+  resetTransform: (animationTime?: number, animationName?: string) => void;
 };
 
 function MapControl({ zoomIn, zoomOut, resetTransform }: MapControlProps) {
@@ -27,7 +24,7 @@ function MapControl({ zoomIn, zoomOut, resetTransform }: MapControlProps) {
   return (
     <>
       <div className="zoomButtonsBox">
-        <button onClick={() => zoomIn(0.2, 10)} className={'buttonsItem '}>
+        <button onClick={() => zoomIn(0.2, 10)} className={"buttonsItem "}>
           <div className="btnIconPlus" />
         </button>
         <button onClick={() => zoomOut(0.2, 10)} className="buttonsItem">
@@ -37,7 +34,7 @@ function MapControl({ zoomIn, zoomOut, resetTransform }: MapControlProps) {
       <div className="resetButtonBox">
         <Link
           to={`/?floor=${floor}`}
-          className={'buttonsItem '}
+          className={"buttonsItem "}
           onClick={() => resetTransform(0)}
         >
           <div className="btnIconReset" />

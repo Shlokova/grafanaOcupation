@@ -1,16 +1,16 @@
-import './index.scss';
-import React, { useEffect, useState } from 'react';
-import FloorControls from '../controls/FloorControls';
-import Floor from '../floor/Floor';
-import MapControl from '../controls/mapControl';
-import RegionsControls from '../controls/regionsControls';
-import { ZoneObject } from '../../types';
-import { TransformWrapper } from 'react-zoom-pan-pinch';
-import { useLocation } from 'react-router-dom';
-import { findSearch } from '../../utils';
-import { XMLParser } from 'fast-xml-parser';
-import axios from 'axios';
-import { AboutRegion } from 'componenets/controls/AboutRegion';
+import "./index.scss";
+import React, { useEffect, useState } from "react";
+import FloorControls from "../controls/FloorControls";
+import Floor from "../floor/Floor";
+import MapControl from "../controls/mapControl";
+import RegionsControls from "../controls/regionsControls";
+import { ZoneObject } from "../../types";
+import { TransformWrapper } from "react-zoom-pan-pinch";
+import { useLocation } from "react-router-dom";
+import { findSearch } from "../../utils";
+import { XMLParser } from "fast-xml-parser";
+import axios from "axios";
+import { AboutRegion } from "componenets/controls/AboutRegion";
 
 type CampusMapProps = {
   floors: ZoneObject[];
@@ -23,17 +23,17 @@ type CampusMapProps = {
 function Map({ workload, floors, width, height }: CampusMapProps) {
   const location = useLocation();
   const dataFloors: ZoneObject[] = floors
-    .filter((el: ZoneObject) => el.type === 'FLOOR')
+    .filter((el: ZoneObject) => el.type === "FLOOR")
     .sort((a, b) => {
-      return parseInt(a.description) - parseInt(b.description);
+      return parseInt(a.humanreadable_name) - parseInt(b.humanreadable_name);
     });
   const { floor, region } = findSearch(location.search);
-  const regionObject = floors.find((el: ZoneObject) => el.name === region);
+  const regionObject = floors.find((el: ZoneObject) => el.trassir_name === region);
   const options = {
     ignoreAttributes: false,
   };
 
-  const [size, setSize] = useState({ width: '', height: '3200' });
+  const [size, setSize] = useState({ width: "", height: "3200" });
 
   useEffect(() => {
     const parser = new XMLParser(options);
@@ -46,8 +46,8 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
       .then((response) => {
         const output = parser.parse(response.data);
         setSize({
-          width: output.svg['@_width'],
-          height: output.svg['@_height'],
+          width: output.svg["@_width"],
+          height: output.svg["@_height"],
         });
       });
   }, [floor]);
@@ -70,13 +70,13 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
       {({ zoomIn, zoomOut, resetTransform, zoomToElement, ...rest }: any) => (
         <React.Fragment>
           <div
-            className={'map'}
+            className={"map"}
             style={{
               width,
               height,
             }}
           >
-            <div className={'floor'}>
+            <div className={"floor"}>
               <Floor
                 workload={workload}
                 size={size}
@@ -86,14 +86,14 @@ function Map({ workload, floors, width, height }: CampusMapProps) {
               />
             </div>
 
-            <div className={'mapControls'}>
+            <div className={"mapControls"}>
               <MapControl
                 zoomIn={zoomIn}
                 zoomOut={zoomOut}
                 resetTransform={resetTransform}
               />
             </div>
-            <div className={'sideMenu'}>
+            <div className={"sideMenu"}>
               <FloorControls
                 floors={dataFloors}
                 resetTransform={resetTransform}

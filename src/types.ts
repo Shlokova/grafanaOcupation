@@ -16,11 +16,11 @@ export type ZonesList = {
 };
 export type ZoneObject = {
   id: number;
-  name: string;
-  description: string;
+  trassir_name: string;
+  humanreadable_name: string;
   coordinates: string;
   image: string | null;
-  type: 'ROOM' | 'FLOOR' | 'BUILDING';
+  type: "ROOM" | "FLOOR" | "BUILDING";
   plan: string | null;
   parent_zone_id: number | null;
   building: number;
