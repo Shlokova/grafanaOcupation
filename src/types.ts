@@ -20,7 +20,7 @@ export type ZoneObject = {
   humanreadable_name: string;
   coordinates: string;
   image: string | null;
-  type: "ROOM" | "FLOOR" | "BUILDING";
+  type: 'ROOM' | 'FLOOR' | 'BUILDING';
   plan: string | null;
   parent_zone_id: number | null;
   building: number;

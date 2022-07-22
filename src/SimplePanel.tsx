@@ -1,19 +1,14 @@
-import React from "react";
-import { PanelProps } from "@grafana/data";
-import { SimpleOptions } from "types";
-import "./App.css";
-import Map from "./componenets/map";
-import { HashRouter as Router } from "react-router-dom";
-import { parseZonesData, parseZonesRelativeWorkload } from "utils";
+import React from 'react';
+import { PanelProps } from '@grafana/data';
+import { SimpleOptions } from 'types';
+import './App.css';
+import Map from './componenets/map';
+import { HashRouter as Router } from 'react-router-dom';
+import { parseZonesData, parseZonesRelativeWorkload } from 'utils';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
-export const SimplePanel: React.FC<Props> = ({
-  options,
-  data,
-  width,
-  height,
-}) => {
+export const SimplePanel: React.FC<Props> = ({ options, data, width, height }) => {
   // const theme = useTheme();
 
   const dataZones = parseZonesData(data);
@@ -30,13 +25,7 @@ export const SimplePanel: React.FC<Props> = ({
       }}
     >
       <Router>
-        <Map
-          width={width}
-          height={height}
-          mapHeight={MAP_HEIGHT}
-          floors={dataZones}
-          workload={zonesRelativeWorkload}
-        />
+        <Map width={width} height={height} mapHeight={MAP_HEIGHT} floors={dataZones} workload={zonesRelativeWorkload} />
       </Router>
     </div>
   );

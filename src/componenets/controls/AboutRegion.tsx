@@ -1,7 +1,7 @@
-import { Progress } from "antd";
-import React from "react";
-import { ZoneObject } from "types";
-import { convertingNumberToColor, convertingNumberToDescription } from "utils";
+import { Progress } from 'antd';
+import React from 'react';
+import { ZoneObject } from 'types';
+import { convertingNumberToColor, convertingNumberToDescription } from 'utils';
 
 type AboutRegionProps = {
   region: ZoneObject | undefined;
@@ -20,9 +20,7 @@ export const AboutRegion = ({ region, workload }: AboutRegionProps) => {
           strokeColor={convertingNumberToColor(workload)}
           strokeWidth={24}
         />
-        <div className="description">
-          {convertingNumberToDescription(workload)}
-        </div>
+        <div className="description">{convertingNumberToDescription(workload)}</div>
       </div>
     );
   }
